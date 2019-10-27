@@ -132,8 +132,8 @@ class Repo(object):
         self._clip_subtitle(movie, start, end, video_clip_path)
 
     def _gen_clip_filename(self, start: timedelta, end: timedelta, movie_name):
-        """形如 20191022125808_002154_to_002157.S01E01.mkv"""
-        TMPL = '{now}_{start}_to_{end}.{movie_name}'
+        """形如 20191022125808_002154_to_002157.S01E01.mkv.mp4"""
+        TMPL = '{now}_{start}_to_{end}.{movie_name}.mp4'
         nowstr = datetime.now().strftime('%Y%m%d%H%M%S')
         startstr = ffmpeg_timedelta(start).replace(':', '')
         endstr = ffmpeg_timedelta(end).replace(':', '')
